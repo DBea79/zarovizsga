@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JavaScript Unit teszt feladat</title>
+        <script type="text/javascript">
+            <!-- Ide jön  a feladat megoldása... -->
+
+            function kivalogatParosOtven(ujszamok) {
+                var kivalogatParosOtven = [];
+                for (var i = 0; i < ujszamok.length; i++) {
+                    if ((ujszamok[i] % 2 == 0) & (ujszamok[i] > 50)) {
+                        kivalogatParosOtven.push(ujszamok[i]);
+                    }
+                }
+                return kivalogatParosOtven;
+            }
+
+            function aBetukSzamaiDiv() {
+                var elsoDiv = document.getElementsByTagName("div")[0];
+
+                var szoveg = elsoDiv.textContent;
+                var aBetukSzama = 0;
+
+                for (var i = 0; i < szoveg.length; i++) {
+                    if (szoveg[i].toLowerCase() === "a") {
+                        aBetukSzama++;
+                    }
+                }
+                return aBetukSzama;
+            }
+
+            function osszeadasFeliras(be1, be2) {
+                var szam1 = Number(be1);
+                var szam2 = Number(be2);
+              
+
+                if (szam1 != null && szam2 != null) {
+                    var eredmeny = szam1 + szam2;
+                    var par = document.createElement("p");
+                    var parTart = document.createTextNode(
+                        `${szam1}+${szam2}=${eredmeny}`
+                    );
+
+                    par.appendChild(parTart);
+
+                    var elsoElem = document.querySelector(".eredmeny");
+                    elsoElem.appendChild(par);
+                }
+            }
+            <!-- Idáig -->
+        </script>
+
+        <script src="testBaseUnit.js"></script>
+    </head>
+    <body>
+        <div></div>
+        <hr />
+        <div id="testResult">
+            <h2>Tesztek</h2>
+        </div>
+    </body>
+</html>
